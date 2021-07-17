@@ -1,0 +1,22 @@
+.contact {
+    height: 100%;
+    padding-top: 30vh;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient( to right, rgba($primary-color, 0.4), rgba($primary-color, 0.1)), url('../img/model-1.jpg') center top/cover;
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1.5rem;
+        font-size: 1.5rem;
+    }
+    div {
+        margin-top: 1rem;
+    }
+}

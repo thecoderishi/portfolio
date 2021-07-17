@@ -1,0 +1,82 @@
+.projects {
+    padding-bottom: 2rem;
+    overflow: hidden;
+    &__bio-image {
+        width: 100vw;
+        height: 40vh;
+        background: linear-gradient( to right, rgba($primary-color, 0.4), rgba($primary-color, 0.1)), url('../img/model-1.jpg') center top/cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding-bottom: 2rem;
+        .text-secondary {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+    &__items {
+        width: 60vw;
+        margin: 2rem auto 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+    }
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        border-bottom: 5px solid $secondary-color;
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+        h2 {
+            position: absolute;
+            color: black;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 100%;
+            left: 100%;
+            opacity: 0;
+            background-color: $secondary-color;
+            cursor: pointer;
+            @include transition-ease;
+        }
+        &:hover {
+            &::after {
+                top: 0;
+                left: 0;
+                opacity: 0.9;
+            }
+            .projects__btn {
+                opacity: 1;
+            }
+        }
+    }
+    &__btns {
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 1;
+    }
+    &__btn {
+        cursor: pointer;
+        opacity: 0;
+        color: #fff;
+        @include transition-ease;
+        &:hover {
+            color: #000;
+        }
+    }
+}
